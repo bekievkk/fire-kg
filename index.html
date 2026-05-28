@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Швейное производство FIRE.PRO | Пошив одежды оптом Бишкек</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #fdfdfd;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* HEADER */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #f0f0f0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        .header-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-circle {
+            width: 45px;
+            height: 45px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            border: 1px solid #eaeaea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 800;
+            color: #1a1a1a;
+            letter-spacing: 1.5px;
+        }
+
+        .logo-text span {
+            color: #ff4500;
+        }
+
+        .nav-area a {
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 25px;
+            transition: color 0.3s;
+        }
+
+        .nav-area a:hover {
+            color: #ff4500;
+        }
+
+        .phone-link {
+            font-weight: 700 !important;
+            color: #1a1a1a !important;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 160px 0 100px 0;
+            background: linear-gradient(135deg, #f9f9f9 0%, #f1f1f1 100%);
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: #ff4500;
+            color: #fff;
+            padding: 6px 16px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.2;
+            color: #111;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #444;
+            margin-bottom: 35px;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 18px 38px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-main:hover {
+            background-color: #ff4500;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,69,0,0.3);
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        /* SECTIONS GENERAL */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: #ff4500;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* WHAT WE SEW (PRODUCTS) */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+        }
+      
+       
+        .product-img {
+            width: 45%;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            width: 55%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-icon {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .product-info h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            font-size: 14px;
+            color: #666;
+        }
+  .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+            height: 380px;
+            border: 1px solid #eaeaea;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        /* WHY CHOOSE US */
+        .bg-light {
+            background-color: #f9f9f9;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .adv-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #eaeaea;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+
+        .adv-card:hover {
+            border-color: #ff4500;
+        }
+
+        .adv-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #fff5f2;
+            color: #ff4500;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            font-weight: bold;
+        }
+
+        .adv-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .adv-card p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* FORM SECTION */
+        .form-section {
+            background-color: #fff;
+        }
+
+        .form-box {
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: #fdfdfd;
+            border: 1px solid #f0f0f0;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .form-group label span {
+            color: #ff4500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #ff4500;
+            box-shadow: 0 0 0 3px rgba(255,69,0,0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 100px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            padding: 60px 0;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid #222;
+            padding-bottom: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo h2 {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo h2 span {
+            color: #ff4500;
+        }
+
+        .footer-contacts p {
+            margin-bottom: 8px;
+            text-align: right;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .hero-grid { flex-direction: column; text-align: center; }
+            .hero-image img { height: 380px; }
+            .products-grid { grid-template-columns: 1fr; }
+            .advantages-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { flex-direction: column; gap: 30px; }
+            .footer-contacts { text-align: left !important; }
+            .footer-contacts p { text-align: left; }
+        }
+
+        @media (max-width: 576px) {
+            .advantages-grid { grid-template-columns: 1fr; }
+            .product-card { flex-direction: column; }
+            .product-img { width: 100%; height: 220px; }
+            .product-info { width: 100%; padding: 24px; }
+            .form-box { padding: 30px 20px; }
+            .hero h1 { font-size: 30px; }
+            .nav-area { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- НАВИГАЦИЯ -->
+    <header>
+        <div class="container">
+            <div class="header-box">
+                <a href="#" class="logo-area">
+                    <div class="logo-circle">
+                        <!-- Эмуляция SVG иконки огня из вашего логотипа -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C12 2 17 6.5 17 11.5C17 14.5396 14.5396 17 11.5 17C8.46041 17 6 14.5396 6 11.5C6 9 7.5 5.5 12 2Z" fill="#FF4500"/>
+                            <path d="M12 7C12 7 15 10 15 13C15 14.6569 13.6569 16 12 16C10.3431 16 9 14.6569 9 13C9 11.5 10.5 9 12 7Z" fill="#FFA500"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">FIRE<span>.PRO</span></div>
+                </a>
+                <div class="nav-area">
+                    <a href="#services">Услуги</a>
+                    <a href="#advantages">Преимущества</a>
+                    <a href="#calculate">Рассчитать стоимость</a>
+                    <a href="tel:wa.me/996700666692" class="phone-link">+996 (700) 66 66 92</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <div class="hero-badge">Производство полного цикла</div>
+                    <h1>Огненное качество.<br>Молниеносные сроки.<br>Пошив одежды.</h1>
+                    <p>Мы бренд "FIRE" более 10 лет на рынке. Специализируемся на производстве женской одежды брюк и юбок ,сочетая современный молодежный стиль ,комфорт и безупречную посадку . Главный акцент делаем на качестве изделий ,актуальных моделях и удобстве повседневной носке . Собственное производство позволяет нам контролировать качество на каждом этапе ,обеспечивать стабильные поставки и гибко подходить к запросам клиентов . И сотрудничаем с оптовыми покупателями ,селлерами маркетплейсов . Наши модели помогают партнерам масштабировать продажи,развивать бренд и выходить на миллионные обороты на маркетплейсах , благодаря востребованному ассортименту ,качеству и высокой повторяемости заказов .</p>
+                    <a href="#calculate" class="btn-main">Рассчитать стоимость партии</a>
+                </div>
+                <div class="hero-image">
+                    <!-- Фото вашей первой модели (бежевый костюм-жилет) -->
+                    <img src="https://web.whatsapp.com/ce6128db-fd96-4e3f-ba78-aca94cfa9966" alt="FIRE Одежда Премиум">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ЧТО МЫ ШЬЕМ -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Что мы шьем</h2>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Карточка 1 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <!-- Фото модели в свитшоте с надписью -->
+                        <img src="https://web.whatsapp.com/25373f15-e0ef-4fc9-96aa-011adbe33c31" alt="Одежда для маркетплейсов">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-icon">👕</div>
+                        <h3>Для маркетплейсов</h3>
+                        <p>Худи, свитшоты, футболки, джоггеры (оверсайз и классика). Идеальная посадка, быстрая подготовка больших тиражей к отгрузке.</p>
+                    </div>
+                </div>
+
+                <!-- Карточка 2 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <!-- Фото модели в строгом черном жилете и брюках -->
+                        <img src="https://web.whatsapp.com/657d78e0-dc43-45ed-a027-db9963c9c80f" alt="Спортивная и классическая одежда">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-icon">🏃‍♂️</div>
+                        <h3>Спортивная одежда</h3>
+                        <p>Костюмы, легинсы, топы из бифлекса и премиального трикотажа. Эластичные швы, устойчивые к интенсивным нагрузкам.</p>
+                    </div>
+                </div>
+
+                <!-- Карточка 3 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <!-- Фото модели в рыжей кожаной куртке -->
+                        <img src="https://web.whatsapp.com/6c857517-54f0-43a3-8ce9-880270250566" alt="Верхняя одежда">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-icon">🧥</div>
+                        <h3>Верхняя одежда</h3>
+                        <p>Жилетки, демисезонные куртки, бомберы. Работа с утеплителями, мембранными тканями и качественной фурнитурой.</p>
+                    </div>
+                </div>
+
+                <!-- Карточка 4 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <!-- Фото модели в бордовом стеганом бомбере -->
+                        <img src="https://web.whatsapp.com/a32e361f-a1c2-4b69-9236-6b9aeaddf3ed" alt="Корпоративный мерч">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-icon">💼</div>
+                        <h3>Корпоративный мерч</h3>
+                        <p>Брендированная одежда с нанесением логотипов (вышивка, шелкография, DTF-печать). Одежда, которую ваши сотрудники будут носить с удовольствием.</p>
+                    </div>
+                    </div>
+            </div>
+            </div>
+    </section>
+  <section id="gallery" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Галерея наших моделей</h2>
+                <p style="margin-top: 12px; color: #666; font-size: 15px;">Примеры готовых изделий премиум-качества. Вы можете легко заменять ссылки на картинки в коде этого блока.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Модель 1 -->
+                <div class="gallery-item">
+                    <img src="https://web.whatsapp.com/7fcab775-ddf5-4b68-9e2d-5ccb3c320db5" alt="Модель 1">
+                </div>
+                <!-- Модель 2 -->
+                <div class="gallery-item">
+                    <img src="https://web.whatsapp.com/718e1df9-9a1a-4707-be4d-1fd222bc68af" alt="Модель 2">
+                </div>
+                <!-- Модель 3 -->
+                <div class="gallery-item">
+                    <img src="https://web.whatsapp.com/25b7f4f2-a96a-4b0f-8d1c-40dc1b695cf4" alt="Модель 3">
+                </div>
+                <!-- Модель 4 -->
+                <div class="gallery-item">
+                    <img src="https://web.whatsapp.com/2e68d71f-31c9-4787-9bbd-100b58969e12" alt="Модель 4">
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px; font-size: 14px; color: #888;">
+                💡 Чтобы добавить ещё модели: откройте файл через Блокнот, найдите тег <code></code> и скопируйте блок <code></code> со своей ссылкой на изображение.
+            </div>
+        </div>
+    </section>
+    <!-- ПОЧЕМУ ВЫБИРАЮТ FIRE -->
+    <section id="advantages" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Почему выбирают FIRE</h2>
+            </div>
+            
+            <div class="advantages-grid">
+                <div class="adv-card">
+                    <div class="adv-icon">🔥</div>
+                    <h3>Скорость</h3>
+                    <p>Современное оборудование японских марок гарантирует сдачу точно в срок без задержек.</p>
+                </div>
+                <div class="adv-card">
+                    <div class="adv-icon">🧵</div>
+                    <h3>Полный цикл</h3>
+                    <p>Конструируем лекала, отшиваем эталонный образец, подбираем ткани под ваш бюджет.</p>
+                </div>
+                <div class="adv-card">
+                    <div class="adv-icon">📐</div>
+                    <h3>Контроль ОТК</h3>
+                    <p>Тройная проверка каждого изделия исключает попадание брака в готовую партию.</p>
+                </div>
+                <div class="adv-card">
+                    <div class="adv-icon">📦</div>
+                    <h3>Готовность к WB/Ozon</h3>
+                    <p>Маркируем по ГОСТу, упаковываем в индивидуальные зип-пакеты, клеим штрихкоды.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФОРМА ЗАЯВКИ -->
+    <section id="calculate" class="form-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Рассчитать стоимость пошива</h2>
+                <p style="margin-top: 15px; color: #666;">Оставьте заявку, и технолог свяжется с вами для точного расчета</p>
+            </div>
+            
+            <div class="form-box">
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label>Ваше имя <span>*</span></label>
+                        <input type="text" class="form-control" placeholder="Актан" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Телефон (WhatsApp / Telegram) <span>*</span></label>
+                        <input type="tel" class="form-control" placeholder="+996 (700) 66 66 92" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Что нужно сшить и в каком количестве?</label>
+                        <textarea class="form-control" placeholder="Например: 500 худи оверсайз из футера 3-нитки с начесом..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-main" style="width: 100%; margin-top: 10px;">Получить прайс и консультацию</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <h2>FIRE<span>.PRO</span></h2>
+                    <p>Профессиональный пошив коллекций и тиражей.</p>
+                </div>
+                <div class="footer-contacts">
+                    <p>г. Бишкек, ул. Производственная, 12А</p>
+                    <p>Тел: <a href="wa.me/996700666692" style="color: #fff; text-decoration: none;">+996 700 66 66 92</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© 2026 Швейное производство FIRE. Все права защищены.</div>
+                <div>Дизайн и разработка премиум линеек.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Ваша заявка успешно отправлена! Технолог производства FIRE свяжется с вами в течение 15 минут.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
